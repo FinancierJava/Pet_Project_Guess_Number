@@ -60,10 +60,11 @@ public class GuessNumber {
         System.out.println(greeting);
 
         //a variable that contains the number that the player has chosen:
-        int numberPerson;
+        int numberPerson = 0;
 
         //creating a random number:
         int guessedNumber = (int) ((Math.random()) * limitTo);
+        System.out.println(guessedNumber);
 
 
         //The game itself
@@ -82,11 +83,16 @@ public class GuessNumber {
 
 
         //End of game:
-        numberPerson = new Scanner(System.in).nextInt();
         if (numberPerson == guessedNumber)
             System.out.println("Congratulations, you have guessed the number!");
-        else
-            System.out.println("Unfortunately, you have lost! The puzzle number has been " + guessedNumber + " .");
+        else {
+            numberPerson = new Scanner(System.in).nextInt();
+            if (numberPerson != guessedNumber)
+                System.out.println("Unfortunately, you have lost! The puzzle number has been " + guessedNumber + " .");
+            else
+                System.out.println("Congratulations, you have guessed the number!");
+
+        }
 
     }
 
