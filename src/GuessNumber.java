@@ -28,7 +28,7 @@ public class GuessNumber {
             personRules = new Scanner(System.in).nextLine();
             if (personRules.equals("yes")) {
                 System.out.println("You will have to guess the number in several tries. " +
-                        "You will also be provided with hints");
+                        "You will also be provided with hints" + "\n");
             } else if (!personRules.equals("no")) {
                 System.out.println(wrongInput);
             }
@@ -50,6 +50,7 @@ public class GuessNumber {
             } else
                 System.out.println(wrongInput);
         } while (!personDifficulty.equals("difficult") && !personDifficulty.equals("easy"));
+        System.out.println();
 
 
         //Starting the game after selecting a difficulty:
@@ -64,7 +65,6 @@ public class GuessNumber {
 
         //creating a random number:
         int guessedNumber = (int) ((Math.random()) * limitTo);
-        System.out.println(guessedNumber);
 
 
         //The game itself
