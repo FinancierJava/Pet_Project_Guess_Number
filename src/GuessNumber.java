@@ -36,9 +36,14 @@ public class GuessNumber {
 
 
         //game difficulty selection
-        System.out.println("What game difficulty do you prefer? [difficult; easy] Enter.");
+        System.out.println("What game difficulty do you prefer? [difficult; easy] Enter. " +
+                "If you wish to customize the difficulty of the game by yourself, enter 'my rules'. ");
         String personDifficulty;
 
+        /*
+        Processing data on a person's choice of game difficulty
+        Depending on the choice of difficulty of the game variables are assigned a certain number of attempts and limit:
+         */
         do {
             personDifficulty = new Scanner(System.in).nextLine();
             if (personDifficulty.equals("difficult")) {
@@ -47,9 +52,16 @@ public class GuessNumber {
             } else if (personDifficulty.equals("easy")) {
                 numberAttempts = 5;
                 limitTo = 32;
+            } else if (personDifficulty.equals("my rules")) {
+                System.out.println();
+                System.out.print("Enter the number of attempts you would like to have: ");
+                numberAttempts = new Scanner(System.in).nextInt();
+                System.out.print("To what limit will the program puzzle a number? Enter: ");
+                limitTo = new Scanner(System.in).nextInt();
             } else
                 System.out.println(wrongInput);
-        } while (!personDifficulty.equals("difficult") && !personDifficulty.equals("easy"));
+        } while (!personDifficulty.equals("difficult") && !personDifficulty.equals("easy")
+                && !personDifficulty.equals("my rules"));
         System.out.println();
 
 
